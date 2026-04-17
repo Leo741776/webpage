@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Portfolio - Leo Aghazarian</title>
+      <link rel="stylesheet" href="styles.css" />
+   </head>
+   <body>
+      <div class="header">
+         <h1>Leo Aghazarian</h1>
+         <address>
+            <div>(747) 609-7644</div>
+            <div>leo.aghazarian.main@outlook.com</div>
+            <a href="https://github.com/Leo741776" rel="noopener noreferrer"
+               >GitHub profile</a
+            >
+         </address>
+      </div>
+      <div class="education">
+         <h2>Education</h2>
+         <p>
+            California State University, Northridge - Bachelor of Science in
+            Computer Science (expected graduation: summer, 2026)
+         </p>
+      </div>
+      <div class="tools">
+         <h2>Tools & Technologies</h2>
+         <p>Tools: Visual Studio, VS Code, IntelliJ, Git/GitHub</p>
+         <p>Languages: Java, C, C++, C#, JavaScript</p>
+      </div>
+      <div class="projects">
+         <h2>Projects</h2>
+         <table>
+            <tr>
+               <th>Project</th>
+               <th>Description</th>
+               <th>Technologies</th>
+               <th>Role</th>
+            </tr>
+            <tr>
+               <td>
+                  <a
+                     href="https://github.com/Leo741776/file-encrypter"
+                     rel="noopener noreferrer"
+                     >DES File Encrypter</a
+                  >
+               </td>
+               <td>
+                  <p>
+                     A desktop application with a GUI, used for securing files
+                     via the Data Encryption Standard (DES). I used a
+                     from-scratch implementation of an existing DES algorithm,
+                     including a full Feistel network, 16-round key scheduling,
+                     and S-box substitutions. To ensure strong security for
+                     real-world files, this program makes use of block cipher
+                     mode of operation and PKCS#7 padding, allowing the user to
+                     safely encrypt and decrypt files by using a 64-bit hex key
+                     generated through the UI.
+                  </p>
+               </td>
+               <td>Java, SQLite, JDBC, JavaFX</td>
+               <td>sole developer</td>
+            </tr>
+            <tr>
+               <td>
+                  <a
+                     href="https://github.com/Leo741776/arcade-shooter"
+                     rel="noopener noreferrer"
+                     >2D Arcade Shoot 'Em Up</a
+                  >
+               </td>
+               <td>
+                  <p>
+                     A vertical arcade shoot 'em up that features a dynamic game
+                     loop via the JavaFX AnimationTimer to manage combat and
+                     scaling difficulty at its core. The player controls a
+                     sprite at the bottom of the screen, navigating left and
+                     right to dodge downward firing enemies that spawn on
+                     randomized drawn zigzag paths. Asynchronous event handling
+                     was used for user input. The engine includes a custom
+                     CollisionManager for bounding-box detection, a dedicated
+                     UIManager for the HUD and state changes, and a SoundManager
+                     for spatial audio effects.
+                  </p>
+               </td>
+               <td>Java, JavaFX</td>
+               <td>sole developer</td>
+            </tr>
+            <tr>
+               <td>
+                  <a
+                     href="https://github.com/Leo741776/c-data-structures-library"
+                     rel="noopener noreferrer"
+                     >Lightweight Data Structures Library for C</a
+                  >
+               </td>
+               <td>
+                  <p>
+                     A library that provides a collection of basic data
+                     structures - Stack, Queue, Linked List, Hash Table, and Max
+                     Heap - focusing on memory efficiency. It implements dynamic
+                     memory management across the board, making use of realloc
+                     for array-based structures and strdup() for key ownership
+                     in the hash table to ensure data stays intact. I've
+                     included O(1) optimizations like tail pointers for linked
+                     list insertions and circular buffer logic (via modulo) for
+                     queues to prevent the O(n) cost of shifting elements. The
+                     hash table makes use of separate chaining and the djb2
+                     algorithm, triggering a full rehash to a load factor of 0.7
+                     to maintain performance. I tried to stick to a clean API
+                     pattern that was possible with C, so I included creation
+                     and destruction via _create() and _free() functions. I also
+                     tried to keep consistent error-handling by using NAN
+                     returns for invalid operations and integer status codes for
+                     memory failures.
+                  </p>
+               </td>
+               <td>C</td>
+               <td>sole developer</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>
