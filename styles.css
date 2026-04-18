@@ -2,10 +2,10 @@
 
 body {
     background-color: #1F2937;
-    color: #FFFFFF;
+    color: #F9FAFB;
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 50px;
 }
 
 th, td {
@@ -13,11 +13,17 @@ th, td {
 }
 
 td {
+    vertical-align: top;
     border-bottom: 1px solid #374151;
 }
 
+td p {
+    margin: 0;
+    padding: 0;
+}
+
 .header, .education, .tools, .projects {
-    margin-bottom: 50px;
+    margin: 20px 0;
 }
 
 .education, .tools, .projects {
@@ -26,6 +32,7 @@ td {
 
 a {
     color: #60A5FA;
+    text-decoration: none;
 }
 
 th {
@@ -36,4 +43,15 @@ th {
 table {
     width: 100%;
     border-collapse: collapse;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+td:nth-child(3) {
+    white-space: nowrap;
+    vertical-align: top;
 }
