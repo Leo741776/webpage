@@ -1,250 +1,246 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Leo Aghazarian</title>
-    <link rel="stylesheet" href="style.css">
-    <base target="_blank">
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portfolio - Leo Aghazarian</title>
+        <link rel="stylesheet" href="style.css" />
+        <base target="_blank" />
+    </head>
 
-<body>
-    <div class="container">
-        <header class="header">
-            <h1>Leo Aghazarian</h1>
-            <p>Software & Embedded Systems Engineer</p>
+    <body>
+        <div class="container">
+            <header class="header">
+                <h1>Leo Aghazarian</h1>
+                <p>Software & Embedded Systems Engineer</p>
 
-            <ul class="contact-info">
-                <li>(747) 609-7644</li>
-                <li>
-                    <a href="mailto:leo.aghazarian.main@outlook.com" target="_self">
-                        leo.aghazarian.main@outlook.com
-                    </a>
-                </li>
-                <li><a href="https://github.com/Leo741776">GitHub</a></li>
-                <li>
-                    <a href="https://www.linkedin.com/in/leo-aghazarian-454933428/">
-                        LinkedIn
-                    </a>
-                </li>
-            </ul>
-        </header>
-
-        <section class="about-me">
-            <h2>About Me</h2>
-            <p>
-                Hello! I'm a software engineer who enjoys bridging the gap
-                between hardware and software. Whether I'm writing low-level
-                microcontroller firmware, building network servers, or
-                developing desktop applications, my focus is on writing
-                clean, practical programs. Outside of software, I'm
-                passionate about computer graphics, game design, history,
-                and film.
-            </p>
-        </section>
-
-        <section class="projects">
-            <h2>Projects</h2>
-
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>
-                        <a href="https://github.com/Leo741776/micro_dda_raycaster"
-                           rel="noopener noreferrer">
-                            Embedded DDA Raycaster
+                <ul class="contact-info">
+                    <li>(747) 609-7644</li>
+                    <li>
+                        <a href="mailto:leo.aghazarian.main@outlook.com" target="_self">
+                            leo.aghazarian.main@outlook.com
                         </a>
-                    </h3>
+                    </li>
+                    <li><a href="https://github.com/Leo741776">GitHub</a></li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/leo-aghazarian-454933428/"> LinkedIn </a>
+                    </li>
+                </ul>
+            </header>
 
-                    <p>
-                        I wanted to write a program that could run on limited
-                        hardware, so I built a real-time 2.5D raycasting engine
-                        for an STM32 Nucleo microcontroller. Since the chip lacks
-                        a hardware floating-point unit, I used the DDA algorithm
-                        with Q16.16 fixed-point arithmetic and precomputed
-                        trigonometric lookup tables. The engine outputs graphics
-                        to an ST7735S display over SPI.
-                    </p>
+            <section class="about-me">
+                <h2>About Me</h2>
+                <p>
+                    Hello, I'm a programmer with a background in low-level systems and application development.
+                    Interested in learning how things work from the ground up, I have worked on projects ranging from
+                    microcontroller firmware to high-performance desktop applications. I value writing maintainable,
+                    efficient code that can be applied to the real world. Outside of software engineering, I'm also
+                    interested in computer graphics, game design, history, and film.
+                </p>
+            </section>
 
-                    <p>
-                        I organized the code into modular files
-                        (<code>dda.c</code>, <code>player.c</code>,
-                        <code>map.c</code>, and <code>draw.c</code>) for
-                        collision detection, camera rotation, and directional
-                        shading. I also built a cross-platform
-                        <a href="https://github.com/Leo741776/dda-raycaster">
-                            desktop companion version
-                        </a>
-                        using SDL3 to experiment with higher resolutions and
-                        frame rates.
-                    </p>
+            <section class="projects">
+                <h2>Projects</h2>
 
-                    <div class="demo">
-                        <label class="image-modal">
-                            <input type="checkbox">
-                            <img src="media/raycaster_media/1.jpeg"
-                                 alt="Raycaster map layout">
-                        </label>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>
+                            <a href="https://github.com/Leo741776/air-quality-monitor" rel="noopener noreferrer">
+                                Embedded Air Quality Monitor
+                            </a>
+                        </h3>
 
-                        <label class="image-modal">
-                            <input type="checkbox">
-                            <img src="media/raycaster_media/2.gif"
-                                 alt="Raycaster running on the display">
-                        </label>
+                        <p>
+                            In order to challenge myself to write embedded firmware without relying on the hardware
+                            abstraction layer (HAL), I built custom, register-level drivers from scratch. This allowed
+                            me to gain complete control over the hardware while keeping memory overhead minimal and
+                            performance snappy.
+                        </p>
+
+                        <p>
+                            The project brings together a few different environmental sensors: a PMS5003 for particulate
+                            matter via UART, an SCD40 for $CO_2$ and temperature/humidity via I²C, and an SGP40 for VOC
+                            readings—all driven by hand-configured UART, I²C, SPI, GPIO, and SysTick peripherals. To
+                            keep things robust against messy sensor data, I added frame header synchronization and CRC
+                            checksum validation to catch corrupted packets before they hit the display.
+                        </p>
+
+                        <p>
+                            Everything is organized modularly with a clean separation between low-level drivers, data
+                            sharing, and the UI pipeline, rendering live metrics cleanly onto an ST7735 TFT display via
+                            SPI. It turned out to be a deeply rewarding dive into bare-metal development.
+                        </p>
+
+                        <div class="demo">
+                            <label class="image-modal">
+                                <input type="checkbox" />
+                                <img src="media\air_quality_monitor\1.png.png" alt="Sensor configuration" />
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>
+                            <a href="https://github.com/Leo741776/personal-finance-tracker" rel="noopener noreferrer">
+                                Personal Finance Tracker
+                            </a>
+                        </h3>
+
+                        <p>
+                            As a semester-long project for a senior software engineering course, I co-developed a WPF
+                            desktop application for managing cash, savings, and brokerage accounts. I focused on the
+                            backend, integrating Firebase for authentication and cloud data storage, Alpha Vantage for
+                            stock searches and pricing, and LiveCharts2 for displaying financial data through graphs and
+                            charts.
+                        </p>
+
+                        <p>
+                            I organized the project using MVVM and a layered architecture, separating views, view
+                            models, services, repositories, and models. This structure supported features including
+                            transaction tracking, budget monitoring, savings account management, and integration with
+                            external APIs.
+                        </p>
+
+                        <div class="demo">
+                            <label class="image-modal">
+                                <input type="checkbox" />
+                                <img src="media/finance_tracker_media/1.png" alt="Finance tracker login window" />
+                            </label>
+
+                            <label class="image-modal">
+                                <input type="checkbox" />
+                                <img src="media/finance_tracker_media/2.png" alt="Finance tracker brokerage window" />
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>
+                            <a href="https://github.com/Leo741776/micro_dda_raycaster" rel="noopener noreferrer">
+                                Embedded DDA Raycaster
+                            </a>
+                        </h3>
+
+                        <p>
+                            I wanted to write a program that could run on limited hardware, so I built a real-time 2.5D
+                            raycasting engine for an STM32 Nucleo microcontroller. Since the chip lacks a hardware
+                            floating-point unit, I used the DDA algorithm with Q16.16 fixed-point arithmetic and
+                            precomputed trigonometric lookup tables. The engine outputs graphics to an ST7735S display
+                            over SPI.
+                        </p>
+
+                        <p>
+                            I organized the code into modular files (<code>dda.c</code>, <code>player.c</code>,
+                            <code>map.c</code>, and <code>draw.c</code>) for collision detection, camera rotation, and
+                            directional shading. I also built a cross-platform
+                            <a href="https://github.com/Leo741776/dda-raycaster"> desktop companion version </a>
+                            using SDL3 to experiment with higher resolutions and frame rates.
+                        </p>
+
+                        <div class="demo">
+                            <label class="image-modal">
+                                <input type="checkbox" />
+                                <img src="media/raycaster_media/1.jpeg" alt="Raycaster map layout" />
+                            </label>
+
+                            <label class="image-modal">
+                                <input type="checkbox" />
+                                <img src="media/raycaster_media/2.gif" alt="Raycaster running on the display" />
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>
+                            <a href="https://github.com/Leo741776/task-scheduler" rel="noopener noreferrer">
+                                Task Scheduler
+                            </a>
+                        </h3>
+
+                        <p>
+                            As part of a four-person team, I co-developed a cross-platform task and schedule manager. I
+                            focused on the backend, using SQLAlchemy, SQLite, and Pydantic for data management and
+                            validation. I implemented user authentication and authorization using Python security
+                            libraries and used FastAPI's dependency injection to manage database sessions and
+                            request-level dependencies.
+                        </p>
+
+                        <p>
+                            Along with another team member, I developed REST API endpoints supporting task management,
+                            folder organization, search and filtering, and notification triggers.
+                        </p>
+
+                        <div class="demo">
+                            <label class="image-modal">
+                                <input type="checkbox" />
+                                <img src="media/task_scheduler_media/1.png" alt="Task scheduler backend architecture" />
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>
+                            <a href="https://github.com/Leo741776/multithreaded-server" rel="noopener noreferrer">
+                                Multithreaded HTTP Server
+                            </a>
+                        </h3>
+
+                        <p>
+                            To learn more about network programming and concurrency, I built a multithreaded HTTP server
+                            in C++ using Winsock. Instead of creating a new thread for each connection, I implemented a
+                            worker-thread pool to handle multiple clients concurrently. I also implemented TCP socket
+                            setup, client connection management, HTTP request parsing and routing, and static file
+                            serving.
+                        </p>
+
+                        <p>
+                            I tested the server with a PowerShell-based stress test that sent 10 waves of 50 concurrent
+                            requests. The server successfully handled all 500 requests without crashes.
+                        </p>
+
+                        <div class="demo">
+                            <label class="image-modal">
+                                <input type="checkbox" />
+                                <img src="media/server_media/1.png" alt="HTTP server request flow" />
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>
+                            <a href="https://github.com/Leo741776/file-encrypter" rel="noopener noreferrer">
+                                DES File Encryptor
+                            </a>
+                        </h3>
+
+                        <p>
+                            Wanting to learn more about user interface design and cryptography, I built a desktop file
+                            encryption application with an implementation of the Data Encryption Standard (DES) written
+                            from scratch. Instead of relying on an existing cryptography library, I implemented the core
+                            DES operations, including 16-round key scheduling, permutations, S-box substitutions, and
+                            the Feistel network.
+                        </p>
+
+                        <p>
+                            I then added Cipher Block Chaining (CBC) mode with randomly generated IVs and PKCS#7 padding
+                            for block-based file processing. The application provides a desktop GUI with file selection,
+                            encryption and decryption modes, and validation for hexadecimal keys and file sizes.
+                        </p>
+
+                        <div class="demo">
+                            <label class="image-modal">
+                                <input type="checkbox" />
+                                <img src="media/file_encryptor_media/1.png" alt="File encryption screen" />
+                            </label>
+
+                            <label class="image-modal">
+                                <input type="checkbox" />
+                                <img src="media/file_encryptor_media/2.png" alt="File decryption screen" />
+                            </label>
+                        </div>
                     </div>
                 </div>
-
-                <div class="project-card">
-                    <h3>
-                        <a href="https://github.com/Leo741776/personal-finance-tracker"
-                           rel="noopener noreferrer">
-                            Personal Finance Tracker
-                        </a>
-                    </h3>
-
-                    <p>
-                        As a semester-long project for a senior software
-                        engineering course, I co-developed a WPF desktop
-                        application for managing cash, savings, and brokerage
-                        accounts. I focused on the backend, integrating Firebase
-                        for authentication and cloud data storage, Alpha Vantage
-                        for stock searches and pricing, and LiveCharts2 for
-                        displaying financial data through graphs and charts.
-                    </p>
-
-                    <p>
-                        I organized the project using MVVM and a layered
-                        architecture, separating views, view models, services,
-                        repositories, and models. This structure supported
-                        features including transaction tracking, budget
-                        monitoring, savings account management, and integration
-                        with external APIs.
-                    </p>
-
-                    <div class="demo">
-                        <label class="image-modal">
-                            <input type="checkbox">
-                            <img src="media/finance_tracker_media/1.png"
-                                 alt="Finance tracker login window">
-                        </label>
-
-                        <label class="image-modal">
-                            <input type="checkbox">
-                            <img src="media/finance_tracker_media/2.png"
-                                 alt="Finance tracker brokerage window">
-                        </label>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>
-                        <a href="https://github.com/Leo741776/multithreaded-server"
-                           rel="noopener noreferrer">
-                            Multithreaded HTTP Server
-                        </a>
-                    </h3>
-
-                    <p>
-                        To learn more about network programming and concurrency,
-                        I built a multithreaded HTTP server in C++ using Winsock.
-                        Instead of creating a new thread for each connection, I
-                        implemented a worker-thread pool to handle multiple
-                        clients concurrently. I also implemented TCP socket
-                        setup, client connection management, HTTP request
-                        parsing and routing, and static file serving.
-                    </p>
-
-                    <p>
-                        I tested the server with a PowerShell-based stress test
-                        that sent 10 waves of 50 concurrent requests. The server
-                        successfully handled all 500 requests without crashes.
-                    </p>
-
-                    <div class="demo">
-                        <label class="image-modal">
-                            <input type="checkbox">
-                            <img src="media/server_media/1.png"
-                                 alt="HTTP server request flow">
-                        </label>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>
-                        <a href="https://github.com/Leo741776/task-scheduler"
-                           rel="noopener noreferrer">
-                            Task Scheduler
-                        </a>
-                    </h3>
-
-                    <p>
-                        As part of a four-person team, I co-developed a
-                        cross-platform task and schedule manager. I focused on
-                        the backend, using SQLAlchemy, SQLite, and Pydantic for
-                        data management and validation. I implemented user
-                        authentication and authorization using Python security
-                        libraries and used FastAPI's dependency injection to
-                        manage database sessions and request-level dependencies.
-                    </p>
-
-                    <p>
-                        Along with another team member, I developed REST API
-                        endpoints supporting task management, folder
-                        organization, search and filtering, and notification
-                        triggers.
-                    </p>
-
-                    <div class="demo">
-                        <label class="image-modal">
-                            <input type="checkbox">
-                            <img src="media/task_scheduler_media/1.png"
-                                 alt="Task scheduler backend architecture">
-                        </label>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>
-                        <a href="https://github.com/Leo741776/file-encrypter"
-                           rel="noopener noreferrer">
-                            DES File Encryptor
-                        </a>
-                    </h3>
-
-                    <p>
-                        Wanting to learn more about user interface design and
-                        cryptography, I built a desktop file encryption
-                        application with an implementation of the Data
-                        Encryption Standard (DES) written from scratch. Instead
-                        of relying on an existing cryptography library, I
-                        implemented the core DES operations, including 16-round
-                        key scheduling, permutations, S-box substitutions, and
-                        the Feistel network.
-                    </p>
-
-                    <p>
-                        I then added Cipher Block Chaining (CBC) mode with
-                        randomly generated IVs and PKCS#7 padding for block-based
-                        file processing. The application provides a desktop GUI
-                        with file selection, encryption and decryption modes,
-                        and validation for hexadecimal keys and file sizes.
-                    </p>
-
-                    <div class="demo">
-                        <label class="image-modal">
-                            <input type="checkbox">
-                            <img src="media/file_encryptor_media/1.png"
-                                 alt="File encryption screen">
-                        </label>
-
-                        <label class="image-modal">
-                            <input type="checkbox">
-                            <img src="media/file_encryptor_media/2.png"
-                                 alt="File decryption screen">
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-</body>
+            </section>
+        </div>
+    </body>
 </html>
