@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+body {
+  background-color: #151b23;
+  color: #e5e7eb;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  padding: 50px 100px;
+}
+
+a {
+  color: #60a5fa;
+}
+
+a:hover {
+  color: #93c5fd;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.project-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project-card {
+  background-color: #1f2937;
+  padding: 1rem;
+}
+
+.project-card h3 {
+  margin-top: 0;
+}
+
+.contact-info,
+.education,
+.projects {
+  border-top: 1px solid #374151;
+  margin-bottom: 1rem;
+}
+
+.image-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.75);
+  justify-content: center;
+  align-items: center;
+}
+
+.image-modal:target {
+  display: flex;
+}
+
+.image-modal img {
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.image-modal-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
