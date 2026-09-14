@@ -65,6 +65,11 @@ ul {
   max-height: 90vh;
 }
 
+.image-modal video {
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
 .image-modal-close {
   display: flex;
   justify-content: center;
